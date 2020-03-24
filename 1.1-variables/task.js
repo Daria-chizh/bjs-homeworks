@@ -22,8 +22,10 @@ function sayHello(userName) {
 }
 
 function calculateFormula() {
-    
-	// реализуйте здесь задание №3
-    
-    return // ваш ответ;
+  const x = 2;
+  const y = 22;
+  const z = 0;
+  const result = x * y + 5 * z + x - 1;
+
+  return result;
 }
