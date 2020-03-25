@@ -1,6 +1,17 @@
-function getResult(a,b,c){
-    // код для задачи №1 писать здесь
-    // return x;
+function getResult(a, b, c){
+  "use strict";
+  let discriminant = b ** 2 - 4 * a * c;
+
+  if (discriminant < 0) {
+    return [];
+  } else if (discriminant === 0) {
+    let x1 = -b / 2 * a;
+    return [x1];
+  } else if (discriminant > 0) {
+    let x1 = (-b + Math.sqrt(discriminant)) / 2 * a;
+    let x2 = (-b - Math.sqrt(discriminant)) / 2 * a;
+    return [x1, x2];
+  }
 }
 
 function getAverageMark(marks){
