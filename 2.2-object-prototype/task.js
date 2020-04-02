@@ -1,6 +1,11 @@
+//Задание 1
 function getAnimalSound(animal) {
-    // код для задачи №1 писать здесь
-    // return animalSound;
+  if (animal === undefined) {
+    return null;
+  }
+
+  const sound = animal.sound;
+  return sound;
 }
 
 function getAverageMark(marks) {
