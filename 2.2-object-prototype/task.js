@@ -24,7 +24,30 @@ function getAverageMark(marks) {
   return roundedAverage;
 }
 
-function checkBirthday(birthday) {
-    // код для задачи №3 писать здесь
-    // return verdict
+
+
+//Задание 3
+function checkBirthday(birthdayStr) {
+  const msPerDay = 1000 * 60 * 60 * 24;
+  const msPerYear = msPerDay * 365;
+
+  const now = Date.now();
+  const birthdayDate = new Date(birthdayStr);
+  const birthday = +birthdayDate;
+
+  const nowYear = (new Date()).getFullYear();
+  const bdayYear = birthdayDate.getFullYear();
+  let leapYears = 0;
+  // skip current non-finished year in calculations
+  for (let year = bdayYear; year < nowYear; year++) {
+    if ((year % 100 === 0) ? (year % 400 === 0) : (year % 4 === 0)) {
+      leapYears++;
+    }
+  }
+
+  const diff = now - birthday;
+  const diffWithoutLeapDays = diff - leapYears * msPerDay;
+  const age = Math.trunc(diffWithoutLeapDays / msPerYear);
+
+  return age >= 18;
 }
