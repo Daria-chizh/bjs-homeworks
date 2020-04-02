@@ -8,9 +8,20 @@ function getAnimalSound(animal) {
   return sound;
 }
 
+// Задание 2
 function getAverageMark(marks) {
-    // код для задачи №2 писать здесь
-    // return averageMark
+  if (marks.length === 0) {
+    return 0;
+  }
+
+  let total = 0;
+  for (let i = 0; i < marks.length; i++) {
+    total += marks[i];
+  }
+
+  const average = total / marks.length;
+  const roundedAverage = Math.round(average);
+  return roundedAverage;
 }
 
 function checkBirthday(birthday) {
