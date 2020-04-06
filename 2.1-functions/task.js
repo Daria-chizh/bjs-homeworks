@@ -42,22 +42,16 @@ function getAverageMark(marks) {
 }
 
 function getAverageScore(data) {
-  let avgScores = {};
-  let totalAvg = 0, subjectCount = 0;
+  let avgScores = {}, avgScoresArray = [];
 
   for (let subject in data) {
-    let subjectMarks = data[subject];
-    let avgMark = getAverageMark(subjectMarks);
+    const subjectMarks = data[subject];
+    const avgMark = getAverageMark(subjectMarks);
     avgScores[subject] = avgMark;
-    totalAvg += avgMark;
-    subjectCount++;
+    avgScoresArray.push(avgMark);
   }
 
-  if (subjectCount === 0) {
-    return { average: 0 };
-  }
-
-  avgScores.average = totalAvg / subjectCount;
+  avgScores.average = getAverageMark(avgScoresArray);
   return avgScores;
 }
 
